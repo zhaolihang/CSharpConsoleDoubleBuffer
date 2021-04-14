@@ -10,10 +10,10 @@ namespace DoubleBuffer
     class Program
     {
         static int width = 80;
-        static int height = 30;
+        static int height = 80;
         public static void Main(string[] args)
         {
-            ChangeConsole.Test();
+            //ChangeConsole.Test();
 
             Test();
         }
@@ -28,8 +28,8 @@ namespace DoubleBuffer
             width = saveWindowWidth;
             height = saveWindowHeight;
             Console.SetWindowSize(1, 1);
-            System.Console.SetBufferSize(width, height);
-            System.Console.SetWindowSize(width, height);
+            Console.SetBufferSize(width, height);
+            Console.SetWindowSize(width, height);
             Console.Clear();
             buffer myBuf = new buffer(width, height, width, height);
             myBuf.Draw("H", 0, 0, 2); //The last number is the attribute (aka color for forground and background. 1 is black, 15 is white. 16 is blue background with black forground.
